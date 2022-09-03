@@ -1,63 +1,20 @@
+"""
+This Simple python script is to translate any text from any language to any other language using google server
+"""
 
-from googletrans import Translator
+import translators as ts
 
-translator = Translator()
+text = input("Enter text to Translate: ")
 
-language = {"bn": "Bangla",
-            "en": "English",
-            "ko": "Koren",
-            "fr": "French",
-            "de": "German",
-            "he": "Hebrew",
-            "hi": "Hindi",
-            "it": "Italian",
-            "ja": "Japanese",
-            'la': "Latin",
-            "ms": "Malay",
-            "ne": "Nepali",
-            "rus": "Russian",
-            "ar": "Arabic",
-            "zh": "Chinese",
-            "es": "Spanish"
-            }
+code = input("Enter language Code to translate(e.g, 'en' for English):")
 
-allow = True  # variable to control correct language code input
 
-while allow:  # checking if language code is valid
+def translation():
+    try:
+        print("Translated text is: " + ts.google(text, to_language=code))
+    except ts.apis.TranslatorError as e:
+        print("Error! Unsupported Language code! ")
 
-    user_code = input(
-        f"Please input desired language code. To see the language code list enter 'options' \n")
 
-    if user_code == "options":  # condition to check for input
-        print("Code : Language")  # Heading of language option menu
-        for i in language.items():
-            print(f"{i[0]} => {i[1]}")
-        print()
-
-    else:  # validating user input
-        for lan_code in language.keys():
-            if lan_code == user_code:
-                print(f"You have selected {language[lan_code]}")
-                allow = False
-        if allow:
-            print("It's not a valid language code!")
-
-while True:  # starting translation loop
-    string = input(
-        "\nWrite the text you want to translate: \nTo exit the program write 'close'\n")
-
-    if string == "close":  # exit program command
-        print(f"\nHave a nice Day!")
-        break
-
-    # translating method from googletrans
-    translated = translator.translate(string, dest=user_code)
-
-    # printing translation
-    print(f"\n{language[user_code]} translation: {translated.text}")
-    # printing pronunciation
-    print(f"Pronunciation : {translated.pronunciation}")
-
-    for i in language.items():  # checking if the source language is listed on language dict and printing it
-        if translated.src == i[0]:
-            print(f"Translated from : {i[1]}")
+translation()
+exit()

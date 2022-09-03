@@ -1,6 +1,6 @@
-'''
+"""
 This Program Generates Random Password by Taking Password length from the user.
-'''
+"""
 import random
 import string
 # characters to generate password from

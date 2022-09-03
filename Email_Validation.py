@@ -1,6 +1,6 @@
-'''
+"""
 This Program is to Validate email address i.e, entered email formate is valid or not
-'''
+"""
 # importing re (Regular expression) module
 import re
 
