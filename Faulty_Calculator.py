@@ -1,3 +1,6 @@
+"""
+This Python program is a Faulty_Calculator that returns the wrong output for the given inputs
+"""
 first_val = int(input("Enter your 1st value: "))
 x = input("Enter operator: ")
 second_val = int(input("Enter your 2nd value: "))

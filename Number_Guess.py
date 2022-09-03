@@ -1,7 +1,7 @@
-'''
+"""
 This program is a simple Number_Guessing game take numbers from user,
 matches with right Number and work accordingly.
-'''
+"""
 Number = 13
 No_of_Turns = 5
 print("\n     ----------Welcome to Number Guessing Game----------")
