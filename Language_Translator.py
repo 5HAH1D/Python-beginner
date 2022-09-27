@@ -1,6 +1,4 @@
-"""
-This Simple python script is to translate any text from any language to any other language using google server
-"""
+'''This Simple python script is to translate any text from any language to any other language using google server'''
 
 import translators as ts
 

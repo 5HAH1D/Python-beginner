@@ -1,6 +1,4 @@
 import datetime as dt
-users = ['Shahid', 'Osama']
-get_input = input("Enter Name: ")
 
 def shahid():
     user_input = ''
@@ -120,12 +118,15 @@ def osama():
         print("Invalid Entry...!!!")
         exit()
 
-if get_input.capitalize() not in users:
-    print("User is not Specified...!!!")
+if __name__ == '__main__':
+    users = ['Shahid', 'Osama']
+    get_input = input("Enter Name: ")
+    if get_input.capitalize() not in users:
+        print("User is not Specified...!!!")
 
-elif get_input.capitalize() == 'Shahid':
-    shahid()
+    elif get_input.capitalize() == 'Shahid':
+        shahid()
 
-elif get_input.capitalize() == 'Osama':
-    osama()
-exit()
+    elif get_input.capitalize() == 'Osama':
+        osama()
+    exit()
