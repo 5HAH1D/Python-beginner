@@ -1,8 +1,8 @@
 import datetime as dt
 
 def shahid():
-    user_input = ''
-    diet_input = ''
+    user_input = None
+    diet_input = None
     print("1- Diet")
     print("2- Exercise")
     try:
